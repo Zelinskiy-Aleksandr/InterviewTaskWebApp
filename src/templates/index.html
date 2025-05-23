@@ -1,60 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bootstrap Layout</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body, html {
-      height: 100%;
-    }
-    .wrapper {
-      min-height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    .content {
-      flex: 1;
-    }
-  </style>
-</head>
-<body>
-  <div class="wrapper">
-    <div class="container-fluid content">
-      <!-- Header -->
-      <header class="row bg-primary text-white text-center p-3">
-        <div class="col">
-          <h1>Header</h1>
-        </div>
-      </header>
-
-      <!-- Main Content -->
-      <div class="row">
-        <!-- Sidebar -->
-        <aside class="col-md-3 bg-light p-3">
-          <h4>Sidebar</h4>
-          <ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link" href="#">Link 1</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Link 2</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Link 3</a></li>
-          </ul>
-        </aside>
-
-        <!-- Main Section -->
-        <main class="col-md-9 p-3">
-          <h2>Main Content</h2>
-          <p>This is the main content area.</p>
-        </main>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center p-3">
-      <p>Footer &copy; 2025</p>
-    </footer>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+{% extends "layout.html" %}
+   {% block main_section %}
+<img src={{ url_for('static', filename='QA.jpg') }} class="img-fluid rounded float-end" style="max-height:500px">
+<p class="font-monospace">A Quality Assurance (QA) Engineer plays a critical role in the software development process by ensuring that applications meet high standards of quality, reliability, and performance before they are released to users. QA Engineers are responsible for designing test plans, writing test cases, executing manual and automated tests, and identifying bugs or issues in software products. They work closely with developers, product managers, and other stakeholders to understand requirements and ensure that software behaves as expected under various conditions.</p>
+<p class="font-monospace">With the increasing complexity of software systems, QA Engineers also use a variety of tools and frameworks for test automation, continuous integration, and performance testing. Their goal is not only to find defects but also to prevent them by improving development processes and encouraging best practices. Ultimately, QA Engineers help deliver better software faster and more efficiently, contributing to overall customer satisfaction and business success.</p>
+   {% endblock %}
