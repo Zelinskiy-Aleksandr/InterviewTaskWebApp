@@ -1,3 +1,10 @@
+  let progressBar = '<div class="demo-container"> \
+                           <div class="progress-bar"> \
+                                 <div class="progress-bar-value"></div> \
+                           </div> \
+                       </div>';
+
+
   // Wait until the DOM is fully loaded
   document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll('#sideMenu >.nav-item, #dropdownMenu >.nav-item');
@@ -24,6 +31,10 @@
                     document.getElementsByTagName('main')[0].innerHTML = xhr.response;
             }
        };
+
+    xhr.onprogress = function(event) {
+        document.getElementsByTagName('main')[0].innerHTML = progressBar
+    };
  }
 
  function getNetworkContent(){
@@ -35,6 +46,10 @@
                     document.getElementsByTagName('main')[0].innerHTML = xhr.response;
             }
        };
+
+    xhr.onprogress = function(event) {
+        document.getElementsByTagName('main')[0].innerHTML = progressBar
+    };
  }
 
   function sendNetworkContentFormData(){
@@ -47,4 +62,8 @@
                     document.getElementsByTagName('main')[0].innerHTML = xhr.response;
             }
        };
+
+    xhr.onprogress = function(event) {
+        document.getElementsByTagName('main')[0].innerHTML = progressBar
+    };
  }
