@@ -1,6 +1,4 @@
 {% extends "layout.html" %}
    {% block main_section %}
-<img src={{ url_for('static', filename='QA.jpg') }} class="img-fluid rounded float-end" style="max-height:500px">
-<p class="font-monospace">A Quality Assurance (QA) Engineer plays a critical role in the software development process by ensuring that applications meet high standards of quality, reliability, and performance before they are released to users. QA Engineers are responsible for designing test plans, writing test cases, executing manual and automated tests, and identifying bugs or issues in software products. They work closely with developers, product managers, and other stakeholders to understand requirements and ensure that software behaves as expected under various conditions.</p>
-<p class="font-monospace">With the increasing complexity of software systems, QA Engineers also use a variety of tools and frameworks for test automation, continuous integration, and performance testing. Their goal is not only to find defects but also to prevent them by improving development processes and encouraging best practices. Ultimately, QA Engineers help deliver better software faster and more efficiently, contributing to overall customer satisfaction and business success.</p>
+        {% include 'home_content.html' %}
    {% endblock %}
