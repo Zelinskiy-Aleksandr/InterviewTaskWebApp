@@ -1,10 +1,11 @@
 from flask import Flask, flash
 from flask import render_template, request
 
-from src.forms import NetworkForm
+from forms import NetworkForm
 
 app = Flask(__name__)
 app.secret_key = "super secret key"
+
 
 
 @app.route("/")
