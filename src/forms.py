@@ -1,5 +1,5 @@
 from wtforms import Form, StringField, validators, ValidationError
-from wtforms.fields.numeric import IntegerField
+from wtforms.fields.numeric import IntegerField, FloatField, DecimalField
 
 
 def check_ip_v4(form, field):
@@ -20,4 +20,8 @@ def check_ip_v4(form, field):
 class NetworkForm(Form):
     IP = StringField('IPv4-address', [check_ip_v4])
     TCP_port = IntegerField('TCP port', [validators.InputRequired(), validators.NumberRange(min=-1, max=66000, message="Incorrect value")])
+
+class FeeForm(Form):
+    amount = IntegerField('Amount', [validators.InputRequired(), validators.NumberRange(min=0, max=100000000)])
+    fee = IntegerField('Fee', [validators.Optional()], render_kw={'readonly': True})
 

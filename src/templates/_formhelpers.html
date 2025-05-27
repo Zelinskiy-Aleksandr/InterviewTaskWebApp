@@ -2,7 +2,7 @@
   <div class="form-group row">
     <label class="col-sm-4 col-form-label">{{ field.label }}</label>
     <div class="col-sm-8">
-      <input class="form-control" name="{{field.name}}" value="{{field.data if field.data is not none else ''}}">
+      <input class="form-control" {{"readonly" if field.render_kw and field.render_kw.get('readonly', False) else ""}} name="{{field.name}}" value="{{field.data if field.data is not none else ''}}">
       {% if field.errors %}
         <ul class=errors>
         {% for error in field.errors %}

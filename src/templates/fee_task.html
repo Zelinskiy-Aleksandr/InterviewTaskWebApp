@@ -1,0 +1,30 @@
+<p class="font-monospace">You should test the form for cash withdrawal fee calculation.<br>
+Set "amount" and press "calc" to get the fee.<br>
+<br>
+    Calculation logic (<u>in the kopecks</u>):<br>
+range1=1 000 00;		perc1 = 1.00%;<br>
+range2=5 000 00;		perc2 = 0.8%;<br>
+range3=10 000 00;		perc3 = 0.6%;<br>
+range4 >10 000 00;	    perc4 = 0.1%;<br>
+<br>
+If the withdrawal amount is  800.00 UAH (less than range1), then the terminal will use commission corresponding to range1 - 1.00%.<br>
+If the withdrawal amount is  1 000.00 UAH (equal to range1), then the terminal will use commission corresponding to range1 - 1.00%.<br>
+If the withdrawal amount is  5 500.00 UAH (more than range2, less than range3), then the terminal will use commission corresponding to range3 - 0.60%.<br>
+If the withdrawal amount is  150 000.00 UAH (more than range4), then the terminal will use commission corresponding to 0.10%.<br>
+<u>Set amount in the kopecks</u>
+</p>
+<br>
+
+
+{% from "_formhelpers.html" import render_field %}
+<div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-4">
+<form name="fee_task">
+    {{ render_field(form.amount) }}
+    {{ render_field(form.fee) }}
+   <div class="form-group row">
+  </div>
+</form>
+    <div class="col-sm-10">
+       <button class="btn btn-primary" onclick="sendFeeTaskFormData()">Calc</button>
+    </div>
+</div>
