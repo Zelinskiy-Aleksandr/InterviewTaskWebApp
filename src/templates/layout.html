@@ -45,10 +45,7 @@
             Menu
           </button>
           <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton" id="dropdownMenu">
-            <li class="nav-item active"><a class="nav-link"  onclick="getHomeContent()" href="#">Home</a></li>
-            <li class="nav-item "><a  class="nav-link" onclick="getNetworkContent()" href="#">Network task</a></li>
-            <li class="nav-item"><a  class="nav-link" href="#">Link 2</a></li>
-            <li class="nav-item"><a  class="nav-link" href="#">Link 3</a></li>
+                          {% include '_menu.html' %}
           </ul>
         </div>
       </div>
@@ -58,10 +55,7 @@
         <!-- Sidebar -->
         <aside class="col-md-3 d-none d-md-block p-3">
           <ul class="nav flex-column" id="sideMenu">
-            <li class="nav-item active"><a class="nav-link"  onclick="getHomeContent()" href="/">Home</a></li>
-            <li class="nav-item "><a class="nav-link" onclick="getNetworkContent()"  href="#">Network task</a></li>
-            <li class="nav-item"><a class="nav-link" onclick="getFeeTaskContent()"  href="#">Fee task</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Link 3</a></li>
+                          {% include '_menu.html' %}
           </ul>
         </aside>
 

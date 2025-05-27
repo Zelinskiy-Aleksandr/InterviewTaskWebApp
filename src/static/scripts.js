@@ -22,9 +22,9 @@ let progressBar = '<div class="demo-container">' +
     });
   });
 
- function getHomeContent(){
+function getContentRequest(url) {
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', '/home_content');
+    xhr.open('GET', url);
     xhr.send();
  //   document.getElementsByTagName('main')[0].innerHTML = progressBar;
     xhr.onload = function() {
@@ -32,31 +32,7 @@ let progressBar = '<div class="demo-container">' +
                     document.getElementsByTagName('main')[0].innerHTML = xhr.response;
             }
        };
- }
-
- function getNetworkContent(){
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', '/network_task');
-    xhr.send();
- //   document.getElementsByTagName('main')[0].innerHTML = progressBar;
-    xhr.onload = function() {
-          if (xhr.status == 200) {
-                    document.getElementsByTagName('main')[0].innerHTML = xhr.response;
-            }
-       };
- }
-
-  function getFeeTaskContent(){
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', '/fee_task');
-    xhr.send();
- //   document.getElementsByTagName('main')[0].innerHTML = progressBar;
-    xhr.onload = function() {
-          if (xhr.status == 200) {
-                    document.getElementsByTagName('main')[0].innerHTML = xhr.response;
-            }
-       };
- }
+}
 
   function sendNetworkContentFormData(){
     let xhr = new XMLHttpRequest();

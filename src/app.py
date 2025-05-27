@@ -5,7 +5,7 @@ from forms import NetworkForm, FeeForm
 
 app = Flask(__name__)
 app.secret_key = "super secret key"
-
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 3600
 
 
 @app.route("/")

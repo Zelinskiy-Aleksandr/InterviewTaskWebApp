@@ -1,17 +1,37 @@
 <p class="font-monospace">You should test the form for cash withdrawal fee calculation.<br>
 Set "amount" and press "calc" to get the fee.<br>
 <br>
-    Calculation logic (<u>in the kopecks</u>):<br>
-range1=1 000 00;		perc1 = 1.00%;<br>
-range2=5 000 00;		perc2 = 0.8%;<br>
-range3=10 000 00;		perc3 = 0.6%;<br>
-range4 >10 000 00;	    perc4 = 0.1%;<br>
+    Calculation logic (<u>in the cents</u>):<br>
+<table id="rangeTable">
+    <tbody>
+    <tr>
+        <td >range1</td>
+        <td >0 < amount <= 1 000 00</td>
+        <td >1.00%</td>
+    </tr>
+    <tr>
+        <td>range2</td>
+        <td >1 000 00 < amount <= 5 000 00</td>
+        <td>0.8%</td>
+    </tr>
+    <tr>
+        <td>range3</td>
+        <td>5 000 00 < amount <= 10 000 00</td>
+        <td>0.6%</td>
+</tr>
+    <tr>
+        <td>range4</td>
+        <td>10 000 00 < amount</td>
+        <td>0.1%</td>
+</tr>
+    </tbody>
+</table>
 <br>
-If the withdrawal amount is  800.00 UAH (less than range1), then the terminal will use commission corresponding to range1 - 1.00%.<br>
-If the withdrawal amount is  1 000.00 UAH (equal to range1), then the terminal will use commission corresponding to range1 - 1.00%.<br>
-If the withdrawal amount is  5 500.00 UAH (more than range2, less than range3), then the terminal will use commission corresponding to range3 - 0.60%.<br>
-If the withdrawal amount is  150 000.00 UAH (more than range4), then the terminal will use commission corresponding to 0.10%.<br>
-<u>Set amount in the kopecks</u>
+If the withdrawal amount is  800.00 EUR (less than range1), then the terminal will use commission corresponding to range1 - 1.00%.<br>
+If the withdrawal amount is  1 000.00 EUR (equal to range1), then the terminal will use commission corresponding to range1 - 1.00%.<br>
+If the withdrawal amount is  5 500.00 EUR (more than range2, less than range3), then the terminal will use commission corresponding to range3 - 0.60%.<br>
+If the withdrawal amount is  150 000.00 EUR (more than range4), then the terminal will use commission corresponding to 0.10%.<br>
+<u>Set amount in the cents</u>
 </p>
 <br>
 
