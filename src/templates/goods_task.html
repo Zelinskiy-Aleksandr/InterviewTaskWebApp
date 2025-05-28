@@ -1,0 +1,45 @@
+<p class="font-monospace">
+    Let to present the model of online shop. You can select the quantity for every good (from 0 to 5) and get price by goods.<br>
+    Clicking by "Calc price" you will get the total price and total price with discount.<br>
+    Discount logic: 10% if total price < 250 EUR, 20% if total price >= 250 EUR<br>
+</p>
+
+
+<table class="table" id="goodsTable">
+    <thead class="thead-light">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th >
+            Price, EUR
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th>
+            Amount, EUR
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for good in goods_dict%}
+      <tr>
+          <td name="good_name">{{good['name']}}</td>
+          <td name="price">{{good['price']}}</td>
+          <!-- this.parentNode.nextElementSibling = <td name="amount"> -->
+          <td name="quantity"><input value="0" min="0" max="5" type="number" onchange="onChangeGoodsQuantity({{good['price']}}, this.value, this.parentNode.nextElementSibling)"/></td>
+          <td name="amount">0</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<div class="m-2">
+    <label class="col-sm-4 col-form-label"><label for="totalPrice">Total price, EUR: </label></label>
+    <input class="form-control col-sm-12 col-md-2 col-lg-2 col-xl-2 d-inline align-middle m-1" readonly name="totalPrice" value="0">
+</div>
+<div class="m-2">
+    <label class="col-sm-4 col-form-label"><label for="totalPrice">Price with discount, EUR:</label></label>
+    <input class="form-control col-sm-12 col-md-2 col-lg-2 col-xl-2 d-inline align-middle m-1" readonly name="priceWithDiscount" value="0">
+</div>
+<button class="btn btn-primary" onclick="getPrice()">Calc price</button>

@@ -22,6 +22,28 @@ let progressBar = '<div class="demo-container">' +
     });
   });
 
+function onChangeGoodsQuantity(price, quantity, amountElement) {
+       amountElement.innerHTML = price*quantity;
+}
+
+function getPrice() {
+       let pricesNodes = Array.from(document.getElementsByName('amount'));
+       pricesNodes.pop();
+       const totalAmountInput = document.getElementsByName('totalPrice')[0];
+       const discountInput = document.getElementsByName('priceWithDiscount')[0];
+       const pricesArray = pricesNodes.map(item => {return Number(item.innerHTML)});
+       totalPrice = pricesArray.reduce((a, b) => a + b, 0);
+       totalAmountInput.value = totalPrice;
+       if (totalPrice <= 250){
+            discountInput.value = totalPrice*0.9;
+       }
+       else{
+            discountInput.value = totalPrice*0.8;
+       }
+
+}
+
+
 function getContentRequest(url) {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', url);

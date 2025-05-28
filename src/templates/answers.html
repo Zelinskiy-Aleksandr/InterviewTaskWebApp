@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+   {% block main_section %}
+         <div class="font-monospace">
+         <h3>Network task answers</h3>
+         <ul>
+             <li>IP-address where the 1st byte has value 256...260 successfully saved</li>
+             <li>IP-address where the last byte has letters successfully saved</li>
+             <li>Error is occured if IP-address equals 127.0.0.1</li>
+             <li>TCP-port range 65 536-66 000 successfully saved</li>
+             <li>TCP-port -1 successfully saved</li>
+         </ul>
+         </div>
+         <div class="font-monospace">
+         <h3>Fee task answers</h3>
+         <ul>
+             <li>1 000 00 < amount <= 5 000 00 - procent 0.7% instead of 0.8%</li>
+             <li>10 000 00 - procent 0.1% instead of 0.6%</li>
+         </ul>
+         </div>
+         <div class="font-monospace">
+         <h3>Goods task answers</h3>
+         <ul>
+             <li>Knives are not included in the total price</li>
+             <li>Total price 250 EUR. Discount = 10%. Must be 20%</li>
+             <li>Price with discount may display incorrectly with cents.
+             For example: 1 chair and 1 spoon. Total price = 51 EUR. Price with discount 40.800000000000004
+             </li>
+         </ul>
+         </div>
+   {% endblock %}

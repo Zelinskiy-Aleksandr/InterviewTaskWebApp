@@ -5,7 +5,8 @@ from forms import NetworkForm, FeeForm
 
 app = Flask(__name__)
 app.secret_key = "super secret key"
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 3600
+#app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 3600
+
 
 
 @app.route("/")
@@ -40,6 +41,17 @@ def fee_task():
 @app.route("/home_content")
 def home_content():
     return render_template('home_content.html')
+
+@app.route("/goods_task")
+def goods_task():
+    goods_dict = [{'name': 'table', 'price': 100}, {'name': 'chair', 'price': 50},
+             {'name': 'spoon', 'price': 1}, {'name': 'fork', 'price': 2},
+             {'name': 'knife', 'price': 10}]
+    return render_template('goods_task.html', goods_dict=goods_dict)
+
+@app.route("/urut23994kksndmaa!!l")
+def get_answers():
+    return render_template('answers.html')
 
 
 
